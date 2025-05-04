@@ -38,6 +38,7 @@ public class ExtentManager {
         extentReports.setSystemInfo("Project", "Ticket_Interact");
         extentReports.setSystemInfo("Team", "DSB");
         extentReports.setSystemInfo("OS Name", GlobalConstants.OS_NAME);
+        extentReports.setSystemInfo("JDK", GlobalConstants.JAVA_VERSION);
         return extentReports;
     }
 }

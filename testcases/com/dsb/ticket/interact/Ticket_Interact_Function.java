@@ -26,8 +26,8 @@ public class Ticket_Interact_Function extends BaseTest {
     @BeforeClass
     public void before(String browserName) {
         driver = getBrowserDriver(browserName);
-        userName = "ipa\\a.servicedesk";
-        password = "Dsb@2024";
+        userName = "";
+        password = "";
         fullName = "Thang";
         phone = randomGenerate();
         gender = "Nam";
@@ -48,10 +48,10 @@ public class Ticket_Interact_Function extends BaseTest {
         ExtentManager.startTest(method.getName() + "-" + browserName, "TC_01_NewCustomer");
         ExtentManager.getTest().log(Status.INFO, "User_01_Login to DSB - STEP01: Log in DSB");
         loginPage = new LoginPageObject(driver);
-        ExtentManager.getTest().log(Status.INFO, "enter username");
-        loginPage.enterToUserName(userName);
+        ExtentManager.getTest().log(Status.INFO, "enter username"+fullName);
+        loginPage.enterToUserName(userName, "username");
         ExtentManager.getTest().log(Status.INFO, "enter Password");
-        loginPage.enterToPassword(password);
+        loginPage.enterToUserName(password, "password");
     }
 
     @Description("Step 02: Make ticket interact")

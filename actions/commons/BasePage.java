@@ -14,10 +14,6 @@ import java.util.Set;
 public class BasePage {
     //Tuan theo nguyen tac tinh dong goi
     //Hàm static co the truy cap truc tiep tu pham vi class
-    public static BasePage getBasePage() {
-        return new BasePage();
-    }
-
 
     //Dung chung nhieu class
     public void openPageUrl(WebDriver driver, String url) {
@@ -273,6 +269,7 @@ public class BasePage {
     public void scrollToElement(WebDriver driver, String locator) {
         new Actions(driver).scrollToElement(getElement(driver, locator));
     }
+
     public void scrollToElementByJS(WebDriver driver, String locator) {
         WebElement element = driver.findElement(getByLocator(locator)); // Tìm phần tử bằng locator
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);

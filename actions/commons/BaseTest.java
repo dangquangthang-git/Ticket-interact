@@ -119,7 +119,7 @@ public class BaseTest {
 
     @BeforeSuite
     private void deleteReportFolder() {
-        deleteAllFileInFolder("htmlReportNG");
+        deleteAllFileInFolder("htmlExtent");
     }
 
     private void deleteAllFileInFolder(String folderName) {

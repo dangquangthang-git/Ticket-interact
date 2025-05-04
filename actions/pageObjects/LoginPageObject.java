@@ -3,6 +3,7 @@ package pageObjects;
 import commons.BasePage;
 
 import org.openqa.selenium.WebDriver;
+import pageUIs.BasePageUI;
 import pageUIs.LoginPageUI;
 
 
@@ -13,14 +14,9 @@ public class LoginPageObject extends BasePage {
         this.driver = driver;
     }
 
-    public void enterToUserName(String userName) {
-        waitForElementClickable(driver, LoginPageUI.USERNAME_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.USERNAME_TEXTBOX, userName);
-    }
-
-    public void enterToPassword(String password) {
-        waitForElementClickable(driver, LoginPageUI.PASSWORD_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
+    public void enterToUserName(String userName, String attribute) {
+        waitForElementClickable(driver, BasePageUI.USERNAME_TEXTBOX,attribute);
+        sendkeyToElement(driver, BasePageUI.USERNAME_TEXTBOX, userName, attribute);
     }
 
     public TaskManageObject clickToLoginButton() {
@@ -28,4 +24,6 @@ public class LoginPageObject extends BasePage {
         clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
         return PageGenerator.getTaskManage(driver);
     }
+
+
 }
